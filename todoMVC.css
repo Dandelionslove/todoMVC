@@ -1,0 +1,318 @@
+body,html
+{
+    background-color:#f2e9e1;
+    font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:20pt;
+    width:400px;
+    min-width:400px;
+    max-width:450px;
+    -webkit-font-smoothing: antialiased;   //抗锯齿很好
+    -moz-osx-font-smoothing: grayscale;     //字体更清晰
+    margin:0;
+    padding:0;
+    margin:0 auto;
+    overflow:scroll;
+}
+
+div#myTodoMVC
+{
+    text-align:center;
+    width:350px;
+    min-width:350px;
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:100px;
+    overflow:hidden;
+    box-shadow:2px 4px 3px #aaaaaa,-2px 4px 3px #aaaaaa;
+    -webkit-box-shadow: 2px 4px 3px #aaaaaa,-2px 4px 3px #aaaaaa;
+    -moz-box-shadow: 2px 4px 3px #aaaaaa,-2px 4px 3px #aaaaaa;
+}
+div.mainPart
+{
+    overflow: hidden;
+}
+.header
+{
+    width:100%;
+    font-size:50pt;
+    font-weight:lighter;
+    color:#a6273d;
+    margin-top:30px;
+    margin-bottom:0;
+}
+.todoInput
+{
+    text-align:left;
+    width:100%;
+    height:47px;
+    background-color:#f8f8ff;
+    font-size:15pt;
+    padding:4px 10px 4px 40px;
+    border:none;
+    line-height: 40px;
+}
+
+.todoInput::placeholder
+{
+    font-style:italic;
+    color:#dadbdb;
+}
+.todoInput::-webkit-input-placeholder
+{
+    font-style:italic;
+    color:#dadbdb;
+}
+.todoInput::-moz-placeholder
+{
+    font-style:italic;
+    color:#dadbdb;
+}
+div.enter
+{
+    background-image: url("enter.png");
+    width:32px;
+    height:32px;
+    position:relative;
+    padding:0;
+    margin:0;
+    top:85px;
+    left:310px;
+    /*z-index: 2;*/
+}
+div.enter:hover
+{
+    cursor:pointer;
+    background-image:url("enter1.png");
+}
+
+div.footer
+{
+    font-size:12pt;
+    height:50px;
+    width:100%;
+    background-color:#f8f8ff;
+    /*border-top:none;*/
+    color:#a7a7a2;
+    float:left;
+    overflow:hidden;
+    box-shadow:2px 4px 5px rgba(0.4,0.4,0.4,0.3);
+    -webkit-box-shadow: 2px 40px 3px #aaaaaa,-2px 40px 3px #aaaaaa;
+    -moz-box-shadow: 2px 4px 3px #aaaaaa,-2px 4px 3px #aaaaaa;
+}
+
+div.footer .countShow
+{
+    float:left;
+    padding-left:5px;
+    padding-top:20px;
+    width:80px;
+    text-align:left;
+    font-size:0.9em;
+}
+ul.filters
+{
+    display:inline;
+    float:left;
+    margin:0;
+    padding-top:20px;
+    padding-left:0px;
+    width:170px;
+    font-size:0.9em;
+}
+ul.filters li
+{
+    display:inline;
+    list-style:none;
+    margin-left:1px;
+    margin-right:1px;
+    padding:2px;
+    border:2px solid rgba(155,100,100,0.5);
+    border-radius:5px;
+}
+ul.filters li:hover, .clearCompleted:hover
+{
+    cursor:pointer;
+    background-color:lavender;
+}
+
+.clearCompleted
+{
+    float:right;
+    margin:0;
+    margin-right:2px;
+    margin-top:12px;
+    width:80px;
+    visibility:hidden;
+    padding:2px;
+    border:2px solid rgba(55,100,100,0.7);
+    border-radius:5px;
+    font-size:0.7em;
+    font-weight:bold;
+}
+
+input[type='checkbox']
+{
+    outline:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+input.toggleAll
+{
+
+    /*background:url("circle.png");*/
+    position:relative;
+    left:-160px;
+    bottom:-50px;
+    width:32px;
+    height:32px;
+}
+input.toggleAll:after
+{
+    content:url("down1.png");
+}
+input.toggleAll:checked:after
+{
+    content:url("down2.png");
+}
+
+/*   todoList style  */
+div.todoItem
+{
+    width:100%;
+    height:37px;
+    background-color:#f8f8ff;
+    border-top:2px solid rgba(150,100,130,0.4);
+    float:left;
+    /*overflow:hidden;*/
+}
+div.todoItem.completedItem .todoContent
+{
+    text-decoration: line-through;
+    color:#aaaaaa;
+}
+
+button.deleteBtn
+{
+    outline:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline-style: none;
+    float:right;
+    display:inline-block;
+    border:0;
+    background-color:transparent;
+    width:32px;
+    height:32px;
+    font-size:15pt;
+    margin-right:10px;
+    background-image:url("delete_button.png");
+}
+button.deleteBtn:hover
+{
+    /*color:rgba(0.4,0.7,0.2,1.0);*/
+    cursor: pointer;
+    /*background-color:lavender;*/
+    background-image:url("delete_button1.png");
+}
+
+input.toggle
+{
+    float:left;
+    left:2px;
+    width:40px;
+}
+input.toggle:after
+{
+    content:url("circle.png");
+}
+input.toggle:checked:after
+{
+    content:url("selected.png");
+}
+span.todoContent
+{
+    text-align:left;
+    width:250px;
+    height:32px;
+    position:relative;
+    font-size:15pt;
+    display:inline-block;
+}
+span.todoContent.editable
+{
+    display:none;
+}
+input.editing
+{
+    width:230px;
+    height:28px;
+    font-size:15pt;
+    position:relative;
+}
+
+div.stamp
+{
+    text-align:center;
+    font-size:0.5em;
+    font-style:italic;
+    color:#aaaaaa;
+    width:100%;
+    height:100px;
+    padding-top:20px;
+}
+input.toggle:hover,input.toggleAll:hover
+{
+    cursor: pointer;
+}
+
+p.poetry
+{
+    margin-left:auto;
+    margin-right:auto;
+    min-width:200px;
+    max-width:250px;
+    /*width:420px;*/
+    height:80px;
+    background-image: url("scenen1.jpg");
+    color:white;
+    font-family:inherit;
+    font-size:10pt;
+    padding:20px;
+    box-shadow:5px 3px 5px #aaaaaa;
+    -ms-transform:rotate(9deg); /* Internet Explorer */
+    -moz-transform:rotate(9deg); /* Firefox */
+    -webkit-transform:rotate(9deg); /* Safari 和 Chrome */
+    -o-transform:rotate(9deg); /* Opera */
+    transform: rotate(9deg);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+{
+    .toggle, .toggleAll
+    {
+        background:none;
+    }
+    .toggleAll
+    {
+        height:32px;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:450px)
+{
+    body
+    {
+        font-size:20pt;
+    }
+}
+
+@media (max-width: 350px)
+{
+    .todoContent
+    {
+        font-size:80%;
+    }
+}

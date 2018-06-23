@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoMVC</title>
+    <meta content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1" name="viewport" />
+    <link href="todoMVC.css" type="text/css" rel="stylesheet" />
+    <!--<script src="Hammer.js"></script>-->
+    <script src="zepto.min.js"></script>
+    <script src="touch.js"></script>
+    <script src="todoController.js"></script>
+    <script src="ajax.js"></script>
+    <script src="todoMVC-ajax.js"></script>
+    <script src="todoMVC.js"></script>
+</head>
+<body>
+<div id="myTodoMVC">
+    <h1 class="header">todos</h1>
+    <div class="enter"></div>
+    <div class="mainPart">
+        <input type="checkbox" class="toggleAll" />
+        <input class="todoInput" type="text" placeholder="What needs to be done?" autofocus>
+        <!--<div class="enter"></div>-->
+        <!--<img class="enter" src="enter.png" alt="enter" />-->
+        <div class="todoList"></div>
+        <div class="footer">
+            <span class="countShow">No item left</span>
+            <ul class="filters">
+                <li class="All">All</li>
+                <li class="Active">Active</li>
+                <li class="Completed">Completed</li>
+            </ul>
+            <span class="clearCompleted">Clear completed</span>
+        </div>
+    </div>
+</div>
+<div class="stamp">
+    Create by shuangliz<br>
+    @ tongji - software engineering
+</div>
+<div class="bottomImg">
+    <!--<img src="scenen1.jpg" class="scene1" alt="scene1" />-->
+    <!--<img src="scenen2.jpeg" class="scene2" alt="scene2" />-->
+    <p class="poetry">
+        Life is a journey. <br>
+        What we should care about <br>
+        is not where it's headed <br>
+        but what we see and how we feel.
+    </p>
+</div>
+</body>
+</html>
